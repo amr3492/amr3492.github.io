@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,153 +8,142 @@
 <meta property="og:title" content="Amr Abdelbaki | Portfolio">
 <meta property="og:description" content="Egyptian Arabic data tools, web apps, WordPress and SEO tooling.">
 <style>
-:root{--bg:#0a0c10;--bg2:#10131a;--card:#141824;--line:#222838;--text:#eef1f7;--mute:#98a2b6;--a:#5eead4;--b:#818cf8;--r:16px}
+:root,[data-theme=dark]{--bg:#0a0c10;--bg2:#10131a;--card:#141824;--line:#222838;--text:#eef1f7;--mute:#98a2b6;--a:#5eead4;--b:#818cf8;--on:#04221e;--g1:rgba(94,234,212,.14);--g2:rgba(129,140,248,.14);--r:16px}
+[data-theme=light]{--bg:#f6f7fb;--bg2:#eceff6;--card:#ffffff;--line:#dde2ee;--text:#101421;--mute:#586178;--a:#0d9488;--b:#4f46e5;--on:#ffffff;--g1:rgba(13,148,136,.12);--g2:rgba(79,70,229,.10)}
+[data-theme=night]{--bg:#000000;--bg2:#0b0804;--card:#120d06;--line:#2a1f10;--text:#f3dfc1;--mute:#a68f6c;--a:#ffb454;--b:#ff7a45;--on:#1a0e00;--g1:rgba(255,180,84,.10);--g2:rgba(255,122,69,.08)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",Tahoma,sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",Tahoma,sans-serif;overflow-x:hidden;transition:background .3s,color .3s}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-.glow{position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(600px 400px at 15% -5%,rgba(94,234,212,.14),transparent),radial-gradient(700px 500px at 95% 10%,rgba(129,140,248,.14),transparent)}
-nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(10,12,16,.72);border-bottom:1px solid var(--line)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(600px 400px at 15% -5%,var(--g1),transparent),radial-gradient(700px 500px at 95% 10%,var(--g2),transparent)}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:60}
+nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
-.logo{font-weight:700;letter-spacing:.2px}
-.logo b{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.links{display:flex;gap:20px;align-items:center;color:var(--mute);font-size:.95rem}
-.links a:hover{color:var(--text)}
-#lang{border:1px solid var(--line);background:var(--card);color:var(--text);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem}
-#lang:hover{border-color:var(--a)}
-.hero{padding:96px 0 72px}
+.logo{font-weight:700}.logo b{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:18px;align-items:center;color:var(--mute);font-size:.93rem}
+.links a:hover,.links a.act{color:var(--text)}
+.tools{display:flex;gap:8px;align-items:center}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{border:0;background:transparent;color:var(--mute);padding:6px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+.seg button.on{background:var(--a);color:var(--on);font-weight:700}
+#lang{border:1px solid var(--line);background:var(--card);color:var(--text);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:.85rem}
+.hero{padding:88px 0 64px}
 .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.88rem;color:var(--mute)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px rgba(94,234,212,.18)}
-h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.08;margin:22px 0 16px;letter-spacing:-1px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px var(--g1);animation:pl 2s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 8px transparent}}
+h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.1;margin:22px 0 16px;letter-spacing:-1px}
 h1 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--mute);font-size:1.15rem;max-width:640px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{padding:11px 20px;border-radius:12px;border:1px solid var(--line);background:var(--card);transition:.2s;font-weight:600}
+.type{color:var(--a);font-weight:700;min-height:1.7em;font-size:1.15rem;margin-bottom:8px}
+.type:after{content:"|";animation:bl 1s steps(2) infinite}@keyframes bl{50%{opacity:0}}
+.lead{color:var(--mute);font-size:1.12rem;max-width:660px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{padding:11px 20px;border-radius:12px;border:1px solid var(--line);background:var(--card);transition:.2s;font-weight:600;cursor:pointer;font:inherit;font-weight:600;color:var(--text)}
 .btn:hover{transform:translateY(-2px);border-color:var(--a)}
-.btn.p{background:linear-gradient(90deg,var(--a),#7dd3fc);color:#04221e;border:0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:52px}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));color:var(--on);border:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:48px}
 .stat{border:1px solid var(--line);background:var(--card);border-radius:var(--r);padding:16px 18px}
-.stat b{display:block;font-size:1.7rem}.stat span{color:var(--mute);font-size:.9rem}
-section{padding:64px 0;border-top:1px solid var(--line)}
-.eyebrow{color:var(--a);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
-h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:8px 0 28px;letter-spacing:-.5px}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.5);box-shadow:0 14px 40px -18px rgba(94,234,212,.35)}
+.stat b{display:block;font-size:1.7rem}.stat span{color:var(--mute);font-size:.88rem}
+section{padding:62px 0;border-top:1px solid var(--line)}
+.eyebrow{color:var(--a);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:8px 0 26px;letter-spacing:-.5px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{border:1px solid var(--line);background:var(--card);color:var(--mute);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.88rem}
+.filters button.on{background:var(--a);color:var(--on);border-color:var(--a);font-weight:700}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--a);box-shadow:0 14px 40px -20px var(--a)}
+.card.hide{display:none}
 .card h3{margin:0 0 4px;font-size:1.2rem}
-.tag{color:var(--a);font-size:.8rem;font-weight:700;letter-spacing:.5px}
-dl{margin:14px 0 16px;display:grid;gap:10px}
-dt{font-size:.74rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--mute)}
-dd{margin:0;font-size:.95rem}
-.stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.stack i{font-style:normal;font-size:.78rem;border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:2px 10px;color:var(--mute)}
-.row{margin-top:auto;display:flex;gap:16px;font-weight:600;font-size:.92rem}
-.row a{color:var(--a)}.row a:hover{text-decoration:underline}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.skills .card h3{font-size:1rem;color:var(--a)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chips span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.88rem}
-.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.when{color:var(--a);font-weight:700;font-size:.9rem}
-.contact{text-align:center}
-.contact .cta{justify-content:center}
-footer{padding:28px 0 48px;color:var(--mute);text-align:center;font-size:.88rem;border-top:1px solid var(--line)}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.tag{color:var(--a);font-size:.78rem;font-weight:700;letter-spacing:.5px}
+.thumb{position:relative;display:block;margin:12px 0 4px;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:var(--bg2);cursor:pointer;padding:0;width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.thumb:hover img{transform:scale(1.05)}
+.thumb span{position:absolute;inset:auto 10px 10px auto;background:var(--a);color:var(--on);font-size:.78rem;font-weight:700;padding:4px 12px;border-radius:999px;opacity:.95}
+[dir=rtl] .thumb span{inset:auto auto 10px 10px}
+dl{margin:12px 0 14px;display:grid;gap:10px}
+dt{font-size:.72rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--mute)}
+dd{margin:0;font-size:.94rem}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.stack i{font-style:normal;font-size:.76rem;border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:2px 10px;color:var(--mute)}
+.row{margin-top:auto;display:flex;gap:16px;font-weight:600;font-size:.92rem;flex-wrap:wrap}
+.row a,.row button{color:var(--a);background:none;border:0;padding:0;cursor:pointer;font:inherit;font-weight:600}
+.row a:hover,.row button:hover{text-decoration:underline}
 .demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
 .demo h3{margin:0 0 6px}.demo p.n{color:var(--mute);font-size:.88rem;margin:0 0 14px}
 table{width:100%;border-collapse:collapse;font-size:.92rem}td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:start}
-th{color:var(--mute);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:1px}
-select,input,textarea{background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;font-size:.9rem;width:100%}
+th{color:var(--mute);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:1px}
+select,input,textarea{background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:.92rem;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--a);outline-offset:1px}
 .big{font-size:2rem;font-weight:800;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
 .meter{height:8px;border-radius:99px;background:var(--bg2);overflow:hidden;margin:4px 0 12px}.meter i{display:block;height:100%;width:0;background:var(--a);transition:width .3s}
 .meter i.bad{background:#f87171}.meter i.mid{background:#fbbf24}
-label{font-size:.8rem;color:var(--mute);display:flex;justify-content:space-between;margin-top:10px}
+label{font-size:.8rem;color:var(--mute);display:flex;justify-content:space-between;margin-top:10px;margin-bottom:4px}
 .sn{border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:12px;margin-top:14px;direction:ltr;text-align:left}
-.sn b{color:#8ab4f8;font-weight:500;display:block}.sn u{color:#7ee787;text-decoration:none;font-size:.82rem}.sn span{color:var(--mute);font-size:.85rem}
-@media (max-width:640px){.links a.h{display:none}.hero{padding:64px 0 48px}section{padding:48px 0}}
-[dir=rtl] .row{flex-direction:row}
+.sn b{color:#6ea8fe;font-weight:500;display:block}.sn u{color:#3fb950;text-decoration:none;font-size:.82rem}.sn span{color:var(--mute);font-size:.85rem}
+.skills,.tl,.gh{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skills .card h3{font-size:1rem;color:var(--a);margin-bottom:10px}
+.bars div{margin:8px 0}.bars small{display:flex;justify-content:space-between;color:var(--mute);font-size:.82rem}
+.bars .meter{margin:3px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.88rem}
+.when{color:var(--a);font-weight:700;font-size:.9rem}
+.gh .card a{color:var(--a);font-weight:700}.gh .card small{color:var(--mute)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.ct a.line{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);margin-bottom:10px;transition:.2s;overflow-wrap:anywhere}
+.ct a.line:hover{border-color:var(--a);transform:translateX(3px)}
+.ct a.line b{min-width:76px;color:var(--a);font-size:.82rem;text-transform:uppercase;letter-spacing:1px}
+footer{padding:28px 0 48px;color:var(--mute);text-align:center;font-size:.88rem;border-top:1px solid var(--line)}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}
+#modal.open{display:flex}
+#mbox{width:min(1100px,100%);height:min(86vh,100%);background:var(--card);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;overflow:hidden}
+#mbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600}
+#mbar a{color:var(--a);font-size:.9rem}
+#mbar button{background:var(--bg2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 12px;cursor:pointer;font:inherit}
+#mframe{flex:1;border:0;background:#fff;width:100%}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.dot,.type:after{animation:none}}
+@media (max-width:760px){.links a{display:none}.hero{padding:60px 0 44px}section{padding:46px 0}nav .wrap{height:auto;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}.tools{width:100%;justify-content:space-between}}
 </style>
 </head>
 <body>
-<div class="glow"></div>
+<div id="prog"></div><div class="glow"></div>
 <nav><div class="wrap">
 <a class="logo" href="#top"><b>Amr</b> Abdelbaki</a>
 <div class="links">
-<a class="h" href="#projects" data-i="n_proj">Projects</a><a class="h" href="#demo" data-i="n_demo">Demos</a><a class="h" href="#skills" data-i="n_skills">Skills</a><a class="h" href="#exp" data-i="n_exp">Experience</a><a class="h" href="#contact" data-i="n_contact">Contact</a>
+<a href="#projects" data-i="n_proj">Projects</a><a href="#demo" data-i="n_demo">Demos</a><a href="#skills" data-i="n_skills">Skills</a><a href="#exp" data-i="n_exp">Background</a><a href="#github" data-i="n_gh">GitHub</a><a href="#contact" data-i="n_contact">Contact</a>
+</div>
+<div class="tools">
+<div class="seg" id="themes" role="group" aria-label="Theme"><button data-t="dark" class="on" data-i="th_d">Dark</button><button data-t="light" data-i="th_l">Light</button><button data-t="night" data-i="th_n">Night</button></div>
 <button id="lang" aria-label="Switch language">العربية</button>
 </div></div></nav>
 
 <header class="hero" id="top"><div class="wrap">
 <span class="pill"><i class="dot"></i><span data-i="pill">Computer science and AI student, Egypt</span></span>
 <h1 data-i="h1">I build <span>practical tools</span> for Arabic data and the web.</h1>
-<p class="lead" data-i="lead">Local-first apps for Egyptian Arabic annotation and dataset quality, plus web apps, WordPress themes and SEO tooling. Everything below is open source on GitHub.</p>
+<div class="type" id="type"></div>
+<p class="lead" data-i="lead">Local-first apps for Egyptian Arabic annotation and dataset quality, plus web apps, WordPress themes and SEO tooling. Everything below is open source on GitHub, with live demos you can open right here.</p>
 <div class="cta">
 <a class="btn p" href="#projects" data-i="c_proj">See projects</a>
+<a class="btn" href="#contact" data-i="c_contact">Contact me</a>
 <a class="btn" href="https://github.com/amr3492">GitHub</a>
 <a class="btn" href="https://www.linkedin.com/in/amr-elsen-102722451">LinkedIn</a>
 </div>
 <div class="stats">
 <div class="stat"><b>8</b><span data-i="s1">projects shown</span></div>
 <div class="stat"><b>AR + EN</b><span data-i="s2">working languages</span></div>
-<div class="stat"><b>0</b><span data-i="s3">servers needed for the demos</span></div>
+<div class="stat"><b>2023 - 2026</b><span data-i="s4">web, advertising and data</span></div>
+<div class="stat"><b id="repoN">9</b><span data-i="s5">GitHub repositories</span></div>
 </div>
 </div></header>
 
 <section id="projects"><div class="wrap">
 <div class="eyebrow" data-i="e_proj">Selected work</div><h2 data-i="t_proj">Projects</h2>
-<div class="projects">
-
-<article class="card rv"><span class="tag" data-i="g_nlp">NLP / ARABIC</span><h3>MasriBench</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p1w">Quality and evaluation workspace for Egyptian Arabic text datasets, in the browser and as a Node CLI.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p1r">Audits duplicates and missing labels, computes precision, recall, F1, confusion matrix and Cohen's kappa. Demo uses a synthetic 24-row sample.</dd></div></dl>
-<div class="stack"><i>JavaScript</i><i>Node.js</i><i>CSV / JSONL</i></div>
-<div class="row"><a href="https://github.com/amr3492/masri-bench" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_nlp">NLP / ARABIC</span><h3>Musannif (مصنّف)</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p2w">RTL browser tool for labeling Egyptian Arabic text for sentiment and intent.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p2r">Keyboard-driven labeling, autosave, JSONL/CSV import and export, and built-in Cohen's kappa between two annotators. Runs fully offline.</dd></div></dl>
-<div class="stack"><i>JavaScript</i><i>RTL UI</i><i>localStorage</i></div>
-<div class="row"><a href="https://amr3492.github.io/egyptian-arabic-annotator/" data-i="demo">Live demo</a><a href="https://github.com/amr3492/egyptian-arabic-annotator" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_seo">SEO</span><h3>seo-audit-tool</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p3w">Zero-dependency Node CLI that audits one page's on-page SEO.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p3r">19 weighted checks, a 0-100 score with a grade, and a client-ready HTML report that explains each finding and how to fix it.</dd></div></dl>
-<div class="stack"><i>Node.js 18+</i><i>HTML report</i><i>CLI</i></div>
-<div class="row"><a href="https://amr3492.github.io/seo-audit-tool/" data-i="demo">Live demo</a><a href="https://github.com/amr3492/seo-audit-tool" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_seo">SEO</span><h3>Search Intent Studio</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p4w">Keyword planning workbench that turns a CSV into an editable content plan.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p4r">Flags repeated phrases, groups keywords into topic clusters, tracks writing status and exports a Markdown brief. Demo numbers are synthetic placeholders.</dd></div></dl>
-<div class="stack"><i>JavaScript</i><i>CSV</i><i>Markdown export</i></div>
-<div class="row"><a href="https://github.com/amr3492/search-intent-studio" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_web">WEB</span><h3>Souq storefront</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p5w">Responsive e-commerce front end with an Egyptian-themed demo catalog.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p5r">12 products in 4 categories, live search, filters, sorting, slide-in cart with shipping rules, validated checkout, and 7 passing unit tests on the cart logic. Demo only, no payments.</dd></div></dl>
-<div class="stack"><i>React 18</i><i>Vite</i><i>Vitest</i></div>
-<div class="row"><a href="https://amr3492.github.io/storefront-react/" data-i="demo">Live demo</a><a href="https://github.com/amr3492/storefront-react" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_app">MOBILE / GRADUATION</span><h3>GreenCycle</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p6w">Graduation project at MTI University (2025/2026): a mobile app linking smart waste bins to a marketplace for recyclables, with eco-points.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p6r">Cross-platform Flutter app with a Node mock API, a project site, an interactive demo and a UI design prototype. Hardware, payments and activity are simulated.</dd></div></dl>
-<div class="stack"><i>Flutter</i><i>Dart</i><i>Node.js</i></div>
-<div class="row"><a href="https://amr3492.github.io/greencycle-waste-marketplace/" data-i="demo">Project site</a><a href="https://github.com/amr3492/greencycle-waste-marketplace" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_wp">WORDPRESS</span><h3>WP SEO Meta Lite</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p7w">Small plugin with real SEO controls and no bloat.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p7r">Per-post title, meta description, social image and noindex, with live character counters, Open Graph and Twitter tags, and clean removal on uninstall.</dd></div></dl>
-<div class="stack"><i>PHP</i><i>WordPress</i></div>
-<div class="row"><a href="https://amr3492.github.io/wp-seo-meta-lite/" data-i="demo">Project page</a><a href="https://github.com/amr3492/wp-seo-meta-lite" data-i="code">Code</a></div></article>
-
-<article class="card rv"><span class="tag" data-i="g_wp">WORDPRESS</span><h3>Cairo Starter theme</h3>
-<dl><div><dt data-i="what">What</dt><dd data-i="p8w">Lightweight business and portfolio theme written from scratch, with no frameworks, page builders or jQuery.</dd></div>
-<div><dt data-i="res">Result</dt><dd data-i="p8r">Hero, services grid and portfolio loop built in, Customizer-editable colors and copy, full template set, translation-ready and responsive.</dd></div></dl>
-<div class="stack"><i>PHP</i><i>CSS Grid</i><i>Vanilla JS</i></div>
-<div class="row"><a href="https://amr3492.github.io/cairo-starter-theme/" data-i="demo">Project page</a><a href="https://github.com/amr3492/cairo-starter-theme" data-i="code">Code</a></div></article>
-
-</div></div></section>
+<div class="filters" id="filters">
+<button class="on" data-f="all" data-i="f_all">All</button><button data-f="nlp" data-i="f_nlp">Arabic NLP</button><button data-f="seo">SEO</button><button data-f="web" data-i="f_web">Web</button><button data-f="wp">WordPress</button><button data-f="app" data-i="f_app">Mobile</button>
+</div>
+<div class="projects" id="plist"></div>
+</div></section>
 
 <section id="demo"><div class="wrap">
 <div class="eyebrow" data-i="e_demo">Interactive</div><h2 data-i="t_demo">Try the ideas</h2>
@@ -189,69 +178,123 @@ label{font-size:.8rem;color:var(--mute);display:flex;justify-content:space-betwe
 <div class="card rv"><span class="when">2025 / 2026</span><h3 data-i="edu">MTI University</h3><p data-i="edu2">Faculty of Computers and Artificial Intelligence. Graduation project: GreenCycle.</p></div>
 </div></div></section>
 
-<section id="contact" class="contact"><div class="wrap">
-<div class="eyebrow" data-i="e_contact">Elsewhere</div><h2 data-i="t_contact">Find me online</h2>
-<div class="cta">
-<a class="btn p" href="https://github.com/amr3492">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/in/amr-elsen-102722451">LinkedIn</a>
-<a class="btn" href="https://khamsat.com/user/amr_abdelbaki26">Khamsat</a>
+<section id="github"><div class="wrap">
+<div class="eyebrow" data-i="e_gh">Live from GitHub</div><h2 data-i="t_gh">Public repositories</h2>
+<div class="gh" id="ghl"><div class="card"><small data-i="loading">Loading from the GitHub API...</small></div></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="eyebrow" data-i="e_contact">Let's talk</div><h2 data-i="t_contact">Contact</h2>
+<div class="contact">
+<div class="ct">
+<a class="line" href="mailto:amrelsen26@gmail.com"><b>Email</b>amrelsen26@gmail.com</a>
+<a class="line" href="https://github.com/amr3492"><b>GitHub</b>github.com/amr3492</a>
+<a class="line" href="https://www.linkedin.com/in/amr-elsen-102722451"><b>LinkedIn</b>amr-elsen-102722451</a>
+<a class="line" href="https://khamsat.com/user/amr_abdelbaki26"><b>Khamsat</b>khamsat.com/user/amr_abdelbaki26</a>
+<p style="color:var(--mute);font-size:.9rem" data-i="ctn">Based in Egypt (Cairo time, GMT+2). I usually reply by email.</p>
+</div>
+<form class="card" id="cf">
+<h3 style="margin-top:0" data-i="cf_t">Send a message</h3>
+<label><span data-i="cf_n">Your name</span></label><input id="cn" required autocomplete="name">
+<label><span data-i="cf_e">Your email</span></label><input id="ce" type="email" required autocomplete="email">
+<label><span data-i="cf_m">Message</span></label><textarea id="cm" rows="5" required></textarea>
+<div class="cta"><button class="btn p" type="submit" data-i="cf_s">Open in my email app</button></div>
+<small style="color:var(--mute);display:block;margin-top:10px" data-i="cf_h">This opens your email app with the message filled in. Nothing is sent from this page.</small>
+</form>
 </div></div></section>
 
 <footer><div class="wrap"><span data-i="foot">Amr Abdelbaki. Built by hand, hosted on GitHub Pages.</span></div></footer>
 
+<div id="modal" role="dialog" aria-modal="true"><div id="mbox"><div id="mbar"><span id="mt"></span><span style="display:flex;gap:10px;align-items:center"><a id="mo" target="_blank" rel="noopener" data-i="newtab">Open in new tab</a><button id="mx" aria-label="Close">X</button></span></div><iframe id="mframe" title="Live demo" loading="lazy"></iframe></div></div>
+
+<script src="thumbs.js"></script>
 <script>
-const T={
-ar:{n_demo:"تجارب",e_demo:"تفاعلي",t_demo:"جرّب الأفكار",d1:"اتفاق المصنفين (Cohen's kappa)",d1n:"نفس المقياس المستخدم في MasriBench وMusannif. غيّر تصنيف وشوف النتيجة. الجمل أمثلة اصطناعية.",d1s:"النص",d1o:"نسبة الاتفاق",d2:"فاحص عنوان ووصف SEO",d2n:"بيستخدم أطوال إضافة WP SEO Meta Lite: العنوان 30-60 والوصف 70-160 حرف.",d2t:"العنوان",d2d:"الوصف",n_proj:"المشاريع",n_skills:"المهارات",n_exp:"الخبرة",n_contact:"التواصل",pill:"طالب علوم حاسب وذكاء اصطناعي، مصر",
-h1:'ببني <span>أدوات عملية</span> للبيانات العربية والويب.',
-lead:"تطبيقات محلية لتصنيف النصوص المصرية وفحص جودة البيانات، وكمان تطبيقات ويب وقوالب ووردبريس وأدوات SEO. كل اللي تحت مفتوح المصدر على GitHub.",
-c_proj:"شوف المشاريع",s1:"مشاريع معروضة",s2:"لغات الشغل",s3:"سيرفرات مطلوبة للعروض",
-e_proj:"أعمال مختارة",t_proj:"المشاريع",what:"إيه هو",res:"النتيجة",code:"الكود",demo:"عرض مباشر",
+const P=[
+{id:"masri-bench",n:"MasriBench",g:"nlp",gt:"g_nlp",st:["JavaScript","Node.js","CSV / JSONL"],demo:1,w:"p1w",r:"p1r"},
+{id:"egyptian-arabic-annotator",n:"Musannif (مصنّف)",g:"nlp",gt:"g_nlp",st:["JavaScript","RTL UI","localStorage"],demo:1,w:"p2w",r:"p2r"},
+{id:"seo-audit-tool",n:"seo-audit-tool",g:"seo",gt:"g_seo",st:["Node.js 18+","HTML report","CLI"],demo:1,w:"p3w",r:"p3r"},
+{id:"search-intent-studio",n:"Search Intent Studio",g:"seo",gt:"g_seo",st:["JavaScript","CSV","Markdown export"],demo:1,w:"p4w",r:"p4r"},
+{id:"storefront-react",n:"Souq storefront",g:"web",gt:"g_web",st:["React 18","Vite","Vitest"],demo:1,w:"p5w",r:"p5r"},
+{id:"greencycle-waste-marketplace",n:"GreenCycle",g:"app",gt:"g_app",st:["Flutter","Dart","Node.js"],demo:1,w:"p6w",r:"p6r"},
+{id:"wp-seo-meta-lite",n:"WP SEO Meta Lite",g:"wp",gt:"g_wp",st:["PHP","WordPress"],demo:1,w:"p7w",r:"p7r"},
+{id:"cairo-starter-theme",n:"Cairo Starter theme",g:"wp",gt:"g_wp",st:["PHP","CSS Grid","Vanilla JS"],demo:1,w:"p8w",r:"p8r"}];
+const T={ar:{n_proj:"المشاريع",n_demo:"تجارب",n_skills:"المهارات",n_exp:"الخلفية",n_gh:"GitHub",n_contact:"تواصل",th_d:"داكن",th_l:"فاتح",th_n:"ليلي",
+pill:"طالب علوم حاسب وذكاء اصطناعي، مصر",h1:'ببني <span>أدوات عملية</span> للبيانات العربية والويب.',
+lead:"تطبيقات محلية لتصنيف النصوص المصرية وفحص جودة البيانات، وكمان تطبيقات ويب وقوالب ووردبريس وأدوات SEO. كل اللي تحت مفتوح المصدر على GitHub، وفيه عروض مباشرة تفتحها من هنا.",
+c_proj:"شوف المشاريع",c_contact:"كلمني",s1:"مشاريع معروضة",s2:"لغات الشغل",s4:"ويب وإعلانات وبيانات",s5:"مستودع على GitHub",
+e_proj:"أعمال مختارة",t_proj:"المشاريع",f_all:"الكل",f_nlp:"معالجة لغة عربية",f_web:"ويب",f_app:"موبايل",
+what:"إيه هو",res:"النتيجة",code:"الكود",demo:"عرض مباشر",preview:"افتح العرض التفاعلي",newtab:"افتح في تبويب جديد",
 g_nlp:"معالجة لغة / عربي",g_seo:"SEO",g_web:"ويب",g_app:"موبايل / مشروع تخرج",g_wp:"ووردبريس",
-p1w:"مساحة عمل لقياس جودة بيانات النصوص المصرية، في المتصفح وكأداة سطر أوامر.",
-p1r:"بتفحص التكرار والتصنيفات الناقصة وبتحسب precision وrecall وF1 وconfusion matrix وCohen's kappa. العرض بعينة اصطناعية من 24 صف.",
-p2w:"أداة في المتصفح بواجهة RTL لتصنيف النصوص المصرية (مشاعر ونية).",
-p2r:"تصنيف بالكيبورد، حفظ تلقائي، استيراد وتصدير JSONL وCSV، وحساب Cohen's kappa بين مصنفَين. بتشتغل أوفلاين بالكامل.",
-p3w:"أداة سطر أوامر بدون مكتبات بتفحص SEO صفحة واحدة.",
-p3r:"19 فحص بأوزان، ودرجة من 0 لـ100 مع تقدير، وتقرير HTML جاهز للعميل بيشرح كل ملاحظة وإزاي تتصلح.",
-p4w:"أداة تخطيط كلمات مفتاحية بتحول ملف CSV لخطة محتوى قابلة للتعديل.",
-p4r:"بتعلّم العبارات المتكررة، وتجمع الكلمات في مجموعات موضوعات، وتتابع حالة الكتابة، وتصدّر ملخص Markdown. أرقام العرض اصطناعية.",
-p5w:"واجهة متجر إلكتروني متجاوبة بكتالوج تجريبي مصري.",
-p5r:"12 منتج في 4 تصنيفات، بحث مباشر وفلاتر وترتيب، سلة بقواعد شحن، دفع بتحقق من البيانات، و7 اختبارات ناجحة لمنطق السلة. عرض فقط من غير دفع حقيقي.",
-p6w:"مشروع تخرج في جامعة MTI (2025/2026): تطبيق موبايل بيربط صناديق مخلفات ذكية بسوق للمواد القابلة لإعادة التدوير مع نقاط بيئية.",
-p6r:"تطبيق Flutter متعدد المنصات مع API تجريبي بـNode، وموقع للمشروع وعرض تفاعلي وتصميم واجهات. الهاردوير والدفع والنشاط كلها محاكاة.",
-p7w:"إضافة صغيرة بتحكم SEO حقيقي من غير تضخيم.",
-p7r:"عنوان ووصف وصورة مشاركة وnoindex لكل مقال، مع عدادات حروف مباشرة ووسوم Open Graph وTwitter، وبتتشال بالكامل عند الحذف.",
-p8w:"قالب خفيف للأعمال والبورتفوليو مكتوب من الصفر، من غير فريمورك أو page builder أو jQuery.",
-p8r:"هيرو وشبكة خدمات وعرض أعمال جاهزين، ألوان ونصوص قابلة للتعديل من Customizer، قوالب كاملة، وجاهز للترجمة ومتجاوب.",
+p1w:"مساحة عمل لقياس جودة بيانات النصوص المصرية، في المتصفح وكأداة سطر أوامر.",p1r:"بتفحص التكرار والتصنيفات الناقصة وبتحسب precision وrecall وF1 وconfusion matrix وCohen's kappa. العرض بعينة اصطناعية من 24 صف.",
+p2w:"أداة في المتصفح بواجهة RTL لتصنيف النصوص المصرية (مشاعر ونية).",p2r:"تصنيف بالكيبورد، حفظ تلقائي، استيراد وتصدير JSONL وCSV، وحساب Cohen's kappa بين مصنفَين. بتشتغل أوفلاين بالكامل.",
+p3w:"أداة سطر أوامر بدون مكتبات بتفحص SEO صفحة واحدة.",p3r:"19 فحص بأوزان، ودرجة من 0 لـ100 مع تقدير، وتقرير HTML جاهز للعميل بيشرح كل ملاحظة وإزاي تتصلح.",
+p4w:"أداة تخطيط كلمات مفتاحية بتحول ملف CSV لخطة محتوى قابلة للتعديل.",p4r:"بتعلّم العبارات المتكررة، وتجمع الكلمات في مجموعات موضوعات، وتتابع حالة الكتابة، وتصدّر ملخص Markdown. أرقام العرض اصطناعية.",
+p5w:"واجهة متجر إلكتروني متجاوبة بكتالوج تجريبي مصري.",p5r:"12 منتج في 4 تصنيفات، بحث مباشر وفلاتر وترتيب، سلة بقواعد شحن، دفع بتحقق من البيانات، و7 اختبارات ناجحة لمنطق السلة. عرض فقط من غير دفع حقيقي.",
+p6w:"مشروع تخرج في جامعة MTI (2025/2026): تطبيق موبايل بيربط صناديق مخلفات ذكية بسوق للمواد القابلة لإعادة التدوير مع نقاط بيئية.",p6r:"تطبيق Flutter متعدد المنصات مع API تجريبي بـNode، وموقع للمشروع وعرض تفاعلي وتصميم واجهات. الهاردوير والدفع والنشاط كلها محاكاة.",
+p7w:"إضافة صغيرة بتحكم SEO حقيقي من غير تضخيم.",p7r:"عنوان ووصف وصورة مشاركة وnoindex لكل مقال، مع عدادات حروف مباشرة ووسوم Open Graph وTwitter، وبتتشال بالكامل عند الحذف.",
+p8w:"قالب خفيف للأعمال والبورتفوليو مكتوب من الصفر، من غير فريمورك أو page builder أو jQuery.",p8r:"هيرو وشبكة خدمات وعرض أعمال جاهزين، ألوان ونصوص قابلة للتعديل من Customizer، قوالب كاملة، وجاهز للترجمة ومتجاوب.",
+e_demo:"تفاعلي",t_demo:"جرّب الأفكار",d1:"اتفاق المصنفين (Cohen's kappa)",d1n:"نفس المقياس المستخدم في MasriBench وMusannif. غيّر تصنيف وشوف النتيجة. الجمل أمثلة اصطناعية.",d1s:"النص",d1o:"نسبة الاتفاق",
+d2:"فاحص عنوان ووصف SEO",d2n:"بيستخدم أطوال إضافة WP SEO Meta Lite: العنوان 30-60 والوصف 70-160 حرف.",d2t:"العنوان",d2d:"الوصف",
 e_skills:"الأدوات",t_skills:"المهارات",k1:"لغات البرمجة",k2:"ويب وتطبيقات",k3:"بيانات عربية وNLP",k4:"SEO ومحتوى",
 k3a:"تصنيف نصوص مصرية",k3b:"فحص جودة البيانات",k3c:"مقاييس التصنيف",k4a:"فحص SEO للصفحات",k4b:"تخطيط كلمات مفتاحية",k4c:"محتوى عربي",
 e_exp:"الخلفية",t_exp:"الخبرة والتعليم",x:"ويب وإعلانات وبيانات.",edu:"جامعة MTI",edu2:"كلية الحاسبات والذكاء الاصطناعي. مشروع التخرج: GreenCycle.",
-e_contact:"في أماكن تانية",t_contact:"تلاقيني هنا",foot:"عمرو عبدالباقي. معمول بإيدي ومستضاف على GitHub Pages."}};
-const en={};
-document.querySelectorAll("[data-i]").forEach(e=>{en[e.dataset.i]=en[e.dataset.i]||e.innerHTML});
-T.en=en;
-let cur="en";
+e_gh:"مباشر من GitHub",t_gh:"المستودعات العامة",loading:"بحمّل من GitHub...",updated:"آخر تحديث",
+e_contact:"نتكلم",t_contact:"تواصل",ctn:"في مصر (توقيت القاهرة GMT+2). غالبًا برد على الإيميل.",cf_t:"ابعت رسالة",cf_n:"اسمك",cf_e:"إيميلك",cf_m:"الرسالة",cf_s:"افتح في تطبيق الإيميل",cf_h:"ده بيفتح تطبيق الإيميل عندك والرسالة جاهزة. مفيش حاجة بتتبعت من الصفحة دي.",
+foot:"عمرو عبدالباقي. معمول بإيدي ومستضاف على GitHub Pages."}};
+const TY={en:["Egyptian Arabic NLP tooling","React and JavaScript apps","WordPress themes and plugins","SEO audits and reporting"],ar:["أدوات NLP للعربية المصرية","تطبيقات React وJavaScript","قوالب وإضافات ووردبريس","فحص SEO وتقارير"]};
+const en={};document.querySelectorAll("[data-i]").forEach(e=>{en[e.dataset.i]=en[e.dataset.i]||e.innerHTML});
+Object.assign(en,{demo:"Live demo",preview:"Open interactive preview",newtab:"Open in new tab",code:"Code",what:"What",res:"Result",updated:"Updated",
+g_nlp:"NLP / ARABIC",g_seo:"SEO",g_web:"WEB",g_app:"MOBILE / GRADUATION",g_wp:"WORDPRESS",
+p1w:"Quality and evaluation workspace for Egyptian Arabic text datasets, in the browser and as a Node CLI.",p1r:"Audits duplicates and missing labels, computes precision, recall, F1, confusion matrix and Cohen's kappa. Demo uses a synthetic 24-row sample.",
+p2w:"RTL browser tool for labeling Egyptian Arabic text for sentiment and intent.",p2r:"Keyboard-driven labeling, autosave, JSONL/CSV import and export, and built-in Cohen's kappa between two annotators. Runs fully offline.",
+p3w:"Zero-dependency Node CLI that audits one page's on-page SEO.",p3r:"19 weighted checks, a 0-100 score with a grade, and a client-ready HTML report that explains each finding and how to fix it.",
+p4w:"Keyword planning workbench that turns a CSV into an editable content plan.",p4r:"Flags repeated phrases, groups keywords into topic clusters, tracks writing status and exports a Markdown brief. Demo numbers are synthetic placeholders.",
+p5w:"Responsive e-commerce front end with an Egyptian-themed demo catalog.",p5r:"12 products in 4 categories, live search, filters, sorting, slide-in cart with shipping rules, validated checkout, and 7 passing unit tests on the cart logic. Demo only, no payments.",
+p6w:"Graduation project at MTI University (2025/2026): a mobile app linking smart waste bins to a marketplace for recyclables, with eco-points.",p6r:"Cross-platform Flutter app with a Node mock API, a project site, an interactive demo and a UI design prototype. Hardware, payments and activity are simulated.",
+p7w:"Small plugin with real SEO controls and no bloat.",p7r:"Per-post title, meta description, social image and noindex, with live character counters, Open Graph and Twitter tags, and clean removal on uninstall.",
+p8w:"Lightweight business and portfolio theme written from scratch, with no frameworks, page builders or jQuery.",p8r:"Hero, services grid and portfolio loop built in, Customizer-editable colors and copy, full template set, translation-ready and responsive."});
+T.en=en;let cur="en",gh=null;
+const $=s=>document.querySelector(s);
+function tr(k){return T[cur][k]!==undefined?T[cur][k]:en[k]}
+function renderProjects(){const f=$("#filters .on").dataset.f;$("#plist").innerHTML=P.map(p=>{const u="https://amr3492.github.io/"+p.id+"/";return `<article class="card rv in ${f==="all"||f===p.g?"":"hide"}"><span class="tag">${tr(p.gt)}</span><h3>${p.n}</h3>
+<button class="thumb" data-u="${u}" data-n="${p.n}" aria-label="${tr("preview")}: ${p.n}"><img loading="lazy" alt="${p.n} screenshot" src="${(window.THUMBS||{})[p.id]||""}"><span>${tr("preview")}</span></button>
+<dl><div><dt>${tr("what")}</dt><dd>${tr(p.w)}</dd></div><div><dt>${tr("res")}</dt><dd>${tr(p.r)}</dd></div></dl>
+<div class="stack">${p.st.map(s=>"<i>"+s+"</i>").join("")}</div>
+<div class="row"><button data-u="${u}" data-n="${p.n}" class="op">${tr("demo")}</button><a href="https://github.com/amr3492/${p.id}">${tr("code")}</a></div></article>`}).join("")}
+function renderGh(){if(!gh)return;$("#ghl").innerHTML=gh.map(r=>`<div class="card"><a href="${r.html_url}">${r.name}</a><p style="color:var(--mute);font-size:.9rem;margin:6px 0">${r.description||""}</p><small>${r.language||""}${r.private?"":" · "+tr("updated")+" "+r.updated_at.slice(0,10)}</small></div>`).join("")}
 function setLang(l){cur=l;const d=document.documentElement;d.lang=l;d.dir=l==="ar"?"rtl":"ltr";
-document.querySelectorAll("[data-i]").forEach(e=>{const v=T[l][e.dataset.i];if(v!==undefined)e.innerHTML=v});
-document.getElementById("lang").textContent=l==="ar"?"English":"العربية";
+document.querySelectorAll("[data-i]").forEach(e=>{const v=tr(e.dataset.i);if(v!==undefined)e.innerHTML=v});
+$("#lang").textContent=l==="ar"?"English":"العربية";renderProjects();renderGh();ty=0;ci=0;
 try{localStorage.setItem("lang",l)}catch(e){}}
-document.getElementById("lang").onclick=()=>setLang(cur==="en"?"ar":"en");
-try{if(localStorage.getItem("lang")==="ar")setLang("ar")}catch(e){}
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll(".rv").forEach((e,i)=>{e.style.transitionDelay=(i%3)*80+"ms";io.observe(e)});
-
+$("#lang").onclick=()=>setLang(cur==="en"?"ar":"en");
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("#themes button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));try{localStorage.setItem("theme",t)}catch(e){}}
+$("#themes").onclick=e=>{if(e.target.dataset.t)setTheme(e.target.dataset.t)};
+$("#filters").onclick=e=>{if(e.target.dataset.f){document.querySelectorAll("#filters button").forEach(b=>b.classList.remove("on"));e.target.classList.add("on");renderProjects()}};
+function openM(u,n){$("#mt").textContent=n;$("#mframe").src=u;$("#mo").href=u;$("#modal").classList.add("open")}
+$("#plist").onclick=e=>{const b=e.target.closest("[data-u]");if(b)openM(b.dataset.u,b.dataset.n)};
+function closeM(){$("#modal").classList.remove("open");$("#mframe").src="about:blank"}
+$("#mx").onclick=closeM;$("#modal").onclick=e=>{if(e.target.id==="modal")closeM()};document.onkeydown=e=>{if(e.key==="Escape")closeM()};
+let ty=0,ci=0,del=false;
+(function tick(){const w=TY[cur][ty%TY[cur].length],el=$("#type");ci+=del?-1:1;el.textContent=w.slice(0,ci);let ms=del?30:60;if(!del&&ci>=w.length){del=true;ms=1400}else if(del&&ci<=0){del=false;ty++;ms=300}setTimeout(tick,ms)})();
 const SENT=[["الخدمة كانت ممتازة","pos","pos"],["التوصيل اتأخر جدًا","neg","neg"],["المنتج عادي","neu","neu"],["حلو بس غالي","mix","neg"],["مش عاجبني الشكل","neg","neg"],["تسلم إيدك","pos","pos"],["وصل في معاده","pos","neu"],["الدعم مفيدش خالص","neg","neg"]];
 const L=["pos","neg","neu","mix"];
 function kappa(){const rows=[...document.querySelectorAll("#kt tbody tr")];const a=rows.map(r=>r.children[1].firstChild.value),b=rows.map(r=>r.children[2].firstChild.value),n=a.length;
 let po=a.filter((x,i)=>x===b[i]).length/n,pe=0;L.forEach(l=>{pe+=(a.filter(x=>x===l).length/n)*(b.filter(x=>x===l).length/n)});
-const k=pe===1?1:(po-pe)/(1-pe);document.getElementById("kv").textContent=k.toFixed(2);document.getElementById("ko").textContent=Math.round(po*100)+"%"}
-(function(){const tb=document.querySelector("#kt tbody");SENT.forEach(r=>{const tr=document.createElement("tr");tr.innerHTML='<td dir="rtl">'+r[0]+'</td>';[1,2].forEach(i=>{const td=document.createElement("td"),se=document.createElement("select");L.forEach(l=>{const o=document.createElement("option");o.value=o.textContent=l;if(l===r[i])o.selected=true;se.appendChild(o)});se.onchange=kappa;td.appendChild(se);tr.appendChild(td)});tb.appendChild(tr)});kappa()})();
-function bar(el,n,lo,hi){const w=Math.min(100,n/hi*100);el.style.width=w+"%";el.className=n===0?"bad":(n<lo?"mid":(n>hi?"bad":""))}
-function seo(){const t=document.getElementById("ti").value,d=document.getElementById("di").value;
-document.getElementById("tc").textContent=t.length+" / 30-60";document.getElementById("dc").textContent=d.length+" / 70-160";
-bar(document.getElementById("tm"),t.length,30,60);bar(document.getElementById("dm"),d.length,70,160);
-document.getElementById("sp").textContent=t.length>60?t.slice(0,57)+"...":t;document.getElementById("sd").textContent=d.length>160?d.slice(0,157)+"...":d}
-["ti","di"].forEach(i=>document.getElementById(i).oninput=seo);seo();
+const k=pe===1?1:(po-pe)/(1-pe);$("#kv").textContent=k.toFixed(2);$("#ko").textContent=Math.round(po*100)+"%"}
+(function(){const tb=$("#kt tbody");SENT.forEach(r=>{const tr=document.createElement("tr");tr.innerHTML='<td dir="rtl">'+r[0]+'</td>';[1,2].forEach(i=>{const td=document.createElement("td"),se=document.createElement("select");L.forEach(l=>{const o=document.createElement("option");o.value=o.textContent=l;if(l===r[i])o.selected=true;se.appendChild(o)});se.onchange=kappa;td.appendChild(se);tr.appendChild(td)});tb.appendChild(tr)});kappa()})();
+function bar(el,n,lo,hi){el.style.width=Math.min(100,n/hi*100)+"%";el.className=n===0?"bad":(n<lo?"mid":(n>hi?"bad":""))}
+function seo(){const t=$("#ti").value,d=$("#di").value;$("#tc").textContent=t.length+" / 30-60";$("#dc").textContent=d.length+" / 70-160";
+bar($("#tm"),t.length,30,60);bar($("#dm"),d.length,70,160);$("#sp").textContent=t.length>60?t.slice(0,57)+"...":t;$("#sd").textContent=d.length>160?d.slice(0,157)+"...":d}
+$("#ti").oninput=$("#di").oninput=seo;seo();
+$("#cf").onsubmit=e=>{e.preventDefault();const n=$("#cn").value,m=$("#cm").value,f=$("#ce").value;
+location.href="mailto:amrelsen26@gmail.com?subject="+encodeURIComponent("Portfolio message from "+n)+"&body="+encodeURIComponent(m+"\n\n"+n+"\n"+f)};
+fetch("https://api.github.com/users/amr3492/repos?per_page=100&sort=updated").then(r=>r.ok?r.json():Promise.reject()).then(j=>{gh=j.filter(r=>!r.fork&&!r.private).slice(0,12);$("#repoN").textContent=j.length;renderGh()}).catch(()=>{$("#ghl").innerHTML='<div class="card"><a href="https://github.com/amr3492?tab=repositories">github.com/amr3492</a></div>'});
+addEventListener("scroll",()=>{const h=document.documentElement;$("#prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+let cs="";document.querySelectorAll("section").forEach(s=>{if(s.getBoundingClientRect().top<140)cs=s.id});document.querySelectorAll(".links a").forEach(a=>a.classList.toggle("act",a.getAttribute("href")==="#"+cs))},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach((e,i)=>{e.style.transitionDelay=(i%3)*80+"ms";io.observe(e)});
+renderProjects();
+try{const t=localStorage.getItem("theme");if(t)setTheme(t);if(localStorage.getItem("lang")==="ar")setLang("ar")}catch(e){}
 </script>
 </body>
 </html>
